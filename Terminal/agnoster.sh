@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Author: Noxcivis
 # Github repo : https://github.com/Noxcivis
 # Created on: 2021-08-15
