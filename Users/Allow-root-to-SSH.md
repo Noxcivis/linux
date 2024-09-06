@@ -4,5 +4,5 @@ Never run a `sudo` command and download a bash (or any other similar) script and
 # With SSH already installed
 `sudo curl -s https://raw.githubusercontent.com/Noxcivis/linux/main/Users/Allow-root-to-SSH.sh | sudo bash`
 
-# SSH is required so installed it first
+# SSH is required so install it first
 `sudo apt-get install -y openssh-server && sudo systemctl enable ssh && sudo systemctl start ssh && sudo curl -s https://raw.githubusercontent.com/Noxcivis/linux/main/Users/Allow-root-to-SSH.sh | sudo bash`
