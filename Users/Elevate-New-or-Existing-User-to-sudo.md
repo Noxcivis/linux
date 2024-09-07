@@ -5,7 +5,7 @@ Never run a `sudo` command and download a bash (or any other similar) script and
 `curl -O https://raw.githubusercontent.com/Noxcivis/linux/main/Users/Elevate-New-or-Existing-User-to-sudo.sh`
 
 ## Make the script executable
-`chmod +x Elevate-New-or-Existing-User-to-sudo.sh`
+`sudo chmod +x ./Elevate-New-or-Existing-User-to-sudo.sh`
 
 ## Run the script
 `sudo ./Elevate-New-or-Existing-User-to-sudo.sh`
