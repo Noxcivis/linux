@@ -28,9 +28,26 @@ enable_root_login() {
   # Backup the original sshd_config file
   cp "$SSHD_CONFIG" "${SSHD_CONFIG}.bak"
 
-  # Allow root login by modifying the sshd_config file
-  sed -i 's/^#PermitRootLogin.*/PermitRootLogin no/' "$SSHD_CONFIG"
-  sed -i 's/^PermitRootLogin.*/PermitRootLogin no/' "$SSHD_CONFIG"
+  # Remove existing lines and add the new configurations
+  sed -i '/^#PermitRootLogin/d' "$SSHD_CONFIG"
+  sed -i '/^PermitRootLogin/d' "$SSHD_CONFIG"
+  sed -i '/^#PubkeyAuthentication/d' "$SSHD_CONFIG"
+  sed -i '/^PubkeyAuthentication/d' "$SSHD_CONFIG"
+  sed -i '/^#PasswordAuthentication/d' "$SSHD_CONFIG"
+  sed -i '/^PasswordAuthentication/d' "$SSHD_CONFIG"
+  sed -i '/^#PermitEmptyPasswords/d' "$SSHD_CONFIG"
+  sed -i '/^PermitEmptyPasswords/d' "$SSHD_CONFIG"
+  sed -i '/^#AuthorizedKeysFile/d' "$SSHD_CONFIG"
+  sed -i '/^AuthorizedKeysFile/d' "$SSHD_CONFIG"
+  sed -i '/^# Noxcivis Modifications/d' "$SSHD_CONFIG"
+
+  echo "" >> "$SSHD_CONFIG"
+  echo "# Noxcivis Modifications" >> "$SSHD_CONFIG"
+  echo "PermitRootLogin no" >> "$SSHD_CONFIG"
+  echo "PubkeyAuthentication yes" >> "$SSHD_CONFIG"
+  echo "PasswordAuthentication no" >> "$SSHD_CONFIG"
+  echo "PermitEmptyPasswords no" >> "$SSHD_CONFIG"
+  echo "AuthorizedKeysFile .ssh/authorized_keys" >> "$SSHD_CONFIG"
 
   # Restart the SSH service to apply changes
   systemctl restart sshd
