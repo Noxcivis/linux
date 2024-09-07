@@ -17,9 +17,6 @@
 sudo apt update -y
 sudo apt install zsh -y
 
-# Change default shell to Zsh
-chsh -s $(which zsh)
-
 # Install Oh My Zsh
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
@@ -35,6 +32,9 @@ sudo update-locale LANG=en_US.UTF-8
 
 # Source .zshrc to apply changes
 echo "source ~/.zshrc" | zsh
+
+# Change default shell to Zsh
+chsh -s $(which zsh)
 
 # Start a new Zsh session
 exec zsh
