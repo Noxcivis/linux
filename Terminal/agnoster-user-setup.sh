@@ -14,7 +14,7 @@
 # Note: This script requires the user to enter their password to install Zsh and change the default shell.
 
 
-rm -fr ~/.oh-my-zsh
+rm -rf ~/.oh-my-zsh
 
 # Install Oh My Zsh
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
@@ -30,6 +30,3 @@ chsh -s $(which zsh)
 
 # Start a new Zsh session
 exec zsh
-
-# Print success message
-echo "Zsh has been configured with the Agnoster theme and the shell has been restarted."
