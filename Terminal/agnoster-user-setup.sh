@@ -13,22 +13,13 @@
 # Note: This script requires curl to be installed on the system. If it is not installed, run 'sudo apt install curl -y' before running this script.
 # Note: This script requires the user to enter their password to install Zsh and change the default shell.
 
-# Update package list and install Zsh
-sudo apt update -y
-sudo apt install zsh -y
+
 
 # Install Oh My Zsh
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
-# Install Powerline fonts and Fira Code
-sudo apt install fonts-powerline fonts-firacode -y
-
 # Set Agnoster theme in .zshrc
 sed -i 's/ZSH_THEME=".*"/ZSH_THEME="agnoster"/' ~/.zshrc
-
-# Ensure locale is set to UTF-8
-sudo apt-get install language-pack-en -y
-sudo update-locale LANG=en_US.UTF-8
 
 # Source .zshrc to apply changes
 echo "source ~/.zshrc" | zsh
