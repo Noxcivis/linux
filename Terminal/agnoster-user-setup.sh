@@ -22,8 +22,8 @@ sed -i 's/ZSH_THEME=".*"/ZSH_THEME="agnoster"/' ~/.zshrc
 # Source .zshrc to apply changes
 echo "source ~/.zshrc" | zsh
 
-# Change default shell to Zsh
-chsh -s $(which zsh)
+# # Change default shell to Zsh
+# chsh -s $(which zsh)
 
-# Start a new Zsh session
-exec zsh
+# # Start a new Zsh session
+# exec zsh
