@@ -28,7 +28,7 @@ echo "source ~/.zshrc" | zsh
 chsh -s $(which zsh)
 
 # Start a new Zsh session
-exec zsh
+# exec zsh
 
 # Print success message
-echo "Zsh has been configured with the Agnoster theme and the shell has been restarted."
+# echo "Zsh has been configured with the Agnoster theme and the shell has been restarted."
